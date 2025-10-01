@@ -128,6 +128,7 @@ console.log(`Gli autori sono tutti maggiorenni: ${areAuthorsAdult}`)
 
 
 // Ordina l’array authors in base all’età, senza creare un nuovo array.
+// (se areAuthorsAdult è true, ordina in ordine crescente, altrimenti in ordine decrescente)
 
 authors.sort((a, b) => {
     if (areAuthorsAdult) {
@@ -139,10 +140,28 @@ authors.sort((a, b) => {
 console.log(authors)
 
 
-// (se areAuthorsAdult è true, ordina in ordine crescente, altrimenti in ordine decrescente)
+// SNACK 4
+// Creare un array (ages) che contiene le età degli autori dei libri.
+
+const age = books.map(e => {
+    return e.author.age
+})
+
+console.log(age)
 
 
+// Calcola la somma delle età (agesSum) usando reduce.
 
+const agesSum = age.reduce((acc, num) => {
+    return acc + num
+})
 
+console.log(agesSum)
+
+// Stampa in console l’età media degli autori dei libri.
+
+const etàMedia = agesSum / authors.length
+
+console.log(`Età media autori: ${etàMedia}`)
 
 
